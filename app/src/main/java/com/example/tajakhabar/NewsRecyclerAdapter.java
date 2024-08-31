@@ -45,13 +45,14 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), FullNews.class);
             Intent intent1 = intent.putExtra("url", article.getUrl());
-            v.getContext().startActivities(new Intent[]{intent});
+            v.getContext().startActivity(intent);
         });
 
     }
     public void updateData(List<Article> data){
         articleList.clear();
         articleList.addAll(data);
+        notifyDataSetChanged();
     }
 
     @Override

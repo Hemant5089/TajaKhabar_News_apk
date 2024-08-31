@@ -96,9 +96,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onSuccess(ArticleResponse response) {
                         runOnUiThread(()->{
                             changeInProgress(false);
-                            articleList = response.getArticles();
-                            adapter.updateData(articleList);
-                            adapter.notifyDataSetChanged();
+                            adapter.updateData(response.getArticles());
+//                            adapter.updateData(articleList);
+//                            adapter.notifyDataSetChanged();
                         });
                     }
 
